@@ -47,9 +47,8 @@ router.post('/register', (req, res) => {
         })
         .then(user => {
             if (user) {
-                return res.status(400).json({
-                    msg: 'Email already exists'
-                });
+                errors.email = 'Email already exists';
+                return res.status(400).json(errors);
             } else {
                 const newUser = new User({
                     name: req.body.name,
@@ -78,6 +77,16 @@ router.post('/login', (req, res) => {
     // const user = req.body;
     // res.json(user);
 
+    const {
+        errors,
+        isValid
+    } = validateLoginInput(req.body);
+
+    if (!isValid) {
+        return res.status(400).json(errors);
+    };
+
+
     const email = req.body.email;
     const password = req.body.password;
 
@@ -86,10 +95,10 @@ router.post('/login', (req, res) => {
             email
         })
         .then(user => {
+            //Checks for user
             if (!user) {
-                return res.status(400).json({
-                    msg: 'User not found'
-                });
+                errors.email = "User not found";
+                return res.status(400).json(errors);
             }
 
             //Check password
