@@ -2,6 +2,26 @@ img {
     width: 100%;
 }
 
+.bg-dark {
+    background-color: #A19E50 !important;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: white;
+}
+
+.btn-info {
+    color: #fff;
+    background-color: #A19E50;
+    border-color: #A19E50;
+}
+
+.btn-light {
+    color: white;
+    background-color: #A19E50;
+    border-color: #A19E50;
+}
+
 .landing {
     position: relative;
     background: url('./img/showcase-2.jpg') no-repeat;
@@ -36,4 +56,12 @@ img {
 
 .form-control::placeholder {
     color: #bbb !important;
+}
+
+/* Second window- Landing Page */
+
+.second-window {
+    position: relative;
+    color: black;
+    background-color: #D8C9AE;
 }
