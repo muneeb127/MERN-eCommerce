@@ -24,12 +24,21 @@ img {
 
 .landing {
     position: relative;
-    background: url('./img/showcase-2.jpg') no-repeat;
+    background: url('./img/showcase-3.jpg') no-repeat;
     background-size: cover;
     background-position: center;
     height: 100vh;
     margin-top: -24px;
     margin-bottom: -50px;
+}
+
+.main-box {
+    width: 600px;
+    height: 500px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .landing-inner {

@@ -13,13 +13,27 @@
   "author": "Muneeb Ahmed Khan",
   "license": "ISC",
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.19",
+    "@fortawesome/free-brands-svg-icons": "^5.9.0",
+    "@fortawesome/free-regular-svg-icons": "^5.9.0",
+    "@fortawesome/free-solid-svg-icons": "^5.9.0",
+    "@fortawesome/react-fontawesome": "^0.1.4",
     "bcryptjs": "^2.4.3",
     "concurrently": "^4.1.1",
     "express": "^4.17.1",
+    "font-awesome": "^4.7.0",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.6.1",
+    "mongoose": "^5.6.4",
     "passport": "^0.4.0",
     "passport-jwt": "^4.0.0",
-    "validator": "^11.0.0"
-  }
+    "validator": "^11.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/muneeb127/MERN-eCommerce.git"
+  },
+  "bugs": {
+    "url": "https://github.com/muneeb127/MERN-eCommerce/issues"
+  },
+  "homepage": "https://github.com/muneeb127/MERN-eCommerce#readme"
 }

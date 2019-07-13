@@ -9,8 +9,8 @@ class Landing extends Component {
           <div className="dark-overlay landing-inner text-light">
             <div className="container">
               <div className="row">
-                <div className="col-md-12 text-center">
-                  <h1 className="display-3 mb-4">Clothing Store</h1>
+                <div className="col-md-12 text-center main-box">
+                  <h1 className="display-3 mb-4">ShoeStore</h1>
                   <p className="lead">
                     {" "}
                     Buy whatever you need at a single click
