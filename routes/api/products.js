@@ -14,15 +14,6 @@ const Product = require("../../models/Product");
 //@access public
 router.get("/test", (req, res) => res.json({ msg: "Profile Works" }));
 
-//@route Post api/products/
-//@desc Get all products
-//@access Public
-router.get("/", (req, res) => {
-  Product.find({})
-    .then(product => res.json(product))
-    .catch(err => console.log(err));
-});
-
 //@route    Post api/products/add
 //@desc     Add product
 //@access   Private
@@ -66,7 +57,7 @@ router.post("/add", (req, res) => {
   });
 });
 
-//@route    Get api/products/all
+//@route    Get api/products/
 //@desc     Get all products
 //@access   Public
 router.get("/", (req, res) => {
