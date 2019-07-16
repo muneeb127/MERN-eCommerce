@@ -5,7 +5,7 @@ module.exports = function validateProductInput(data) {
   const errors = {};
 
   data.name = !isEmpty(data.name) ? data.name : "";
-  data.image = !isEmpty(data.image) ? data.image : "";
+  // data.image = !isEmpty(data.image) ? data.image : "";
   data.description = !isEmpty(data.description) ? data.description : "";
   data.category = !isEmpty(data.category) ? data.category : "";
   data.quantity = !isEmpty(data.quantity) ? data.quantity : "";
@@ -24,9 +24,9 @@ module.exports = function validateProductInput(data) {
     errors.name = "Name field is required";
   }
 
-  if (Validator.isEmpty(data.image)) {
-    errors.image = "Image path is required";
-  }
+  // if (Validator.isEmpty(data.image)) {
+  //   errors.image = "Image path is required";
+  // }
 
   if (Validator.isEmpty(data.description)) {
     errors.description = "Description field is required";

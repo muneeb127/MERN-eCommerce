@@ -1,9 +1,13 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { withRouter } from "react-router-dom";
 import PropTypes from "prop-types";
 import TextFieldGroup from "../common/TextFieldGroup";
 import TextAreaFieldGroup from "../common/TextAreaFieldGroup";
 import SelectListGroup from "../common/SelectListGroup";
+import UploadImage from "../common/UploadImage";
+
+import { createProduct } from "../../actions/productActions";
 
 class AddProducts extends Component {
   constructor(props) {
@@ -22,9 +26,25 @@ class AddProducts extends Component {
     this.onSubmit = this.onSubmit.bind(this);
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.errors) {
+      this.setState({ errors: nextProps.errors });
+    }
+  }
+
   onSubmit(e) {
-    e.prevenDefault();
-    console.log("submit");
+    e.preventDefault();
+
+    const productData = {
+      name: this.state.name,
+      image: this.state.image,
+      description: this.state.description,
+      category: this.state.category,
+      quantity: this.state.quantity,
+      price: this.state.price
+    };
+
+    this.props.createProduct(productData, this.props.history);
   }
 
   onChange(e) {
@@ -98,6 +118,20 @@ class AddProducts extends Component {
                   error={errors.price}
                   info="The selling price of the shoe"
                 />
+                <UploadImage
+                  name="image"
+                  value={this.state.image}
+                  onChange={this.onChange}
+                  error={errors.image}
+                  type="file"
+                  info="Upload image of the product"
+                />
+
+                <input
+                  type="submit"
+                  value="Submit"
+                  className="btn btn-info btn-block mt-4"
+                />
               </form>
             </div>
           </div>
@@ -108,6 +142,7 @@ class AddProducts extends Component {
 }
 
 AddProducts.propTypes = {
+  createProduct: PropTypes.func.isRequired,
   product: PropTypes.object.isRequired,
   errors: PropTypes.object.isRequired
 };
@@ -117,4 +152,7 @@ const mapStateToProps = state => ({
   errors: state.errors
 });
 
-export default connect(mapStateToProps)(AddProducts);
+export default connect(
+  mapStateToProps,
+  { createProduct }
+)(AddProducts);
