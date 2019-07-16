@@ -42,6 +42,7 @@ require("./config/passport")(passport);
 //User Routers
 app.use("/api/users", users);
 app.use("/api/products", products);
+app.use('/uploads/', express.static('uploads'));
 
 const port = process.env.PORT || 5000;
 
